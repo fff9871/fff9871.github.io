@@ -1,0 +1,142 @@
+# Basic Site Settings
+locale                   : "en-US"
+site_theme               : "default"
+title                    : "Donghao Fu / 付东淏"
+title_separator          : "-"
+name                     : &name "Donghao Fu / 付东淏"
+description              : &description "Academic homepage for Donghao Fu, undergraduate student at Beihang University."
+url                      : "https://fff9871.github.io"
+baseurl                  : ""
+repository               : "fff9871/fff9871.github.io"
+
+# Sidebar author information
+author:
+  avatar                 : "profile-photo.jpg"
+  name                   : "Donghao Fu / 付东淏"
+  bio                    : "Undergraduate student at the School of Software, Beihang University. Interested in agent security, LLM systems, and multimodal intelligent perception."
+  location               : "Beijing, China"
+  employer               : "School of Software, Beihang University"
+  uri                    : "https://fff9871.github.io"
+  email                  : "fudonghao@buaa.edu.cn"
+  github                 : "fff9871"
+
+publication_category:
+  conferences:
+    title: "Selected Papers and Submissions"
+  manuscripts:
+    title: "Patents"
+
+teaser                   :
+breadcrumbs              : false
+words_per_minute         : 180
+future                   : false
+read_more                : "disabled"
+talkmap_link             : false
+
+comments:
+  provider               :
+
+atom_feed:
+  hide                   : true
+
+google_site_verification :
+bing_site_verification   :
+alexa_site_verification  :
+yandex_site_verification :
+
+twitter:
+  username               :
+facebook:
+  username               :
+  app_id                 :
+  publisher              :
+og_image                 :
+og_description           :
+social:
+  type                   : Person
+  name                   : "Donghao Fu"
+  links:
+    - "https://github.com/fff9871"
+
+analytics:
+  provider               : "false"
+
+include:
+  - .htaccess
+  - _pages
+  - files
+
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .github
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/_main.js
+  - assets/js/plugins
+  - assets/js/vendor
+  - CHANGELOG
+  - Capfile
+  - config
+  - Dockerfile
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - local
+  - log
+  - node_modules
+  - package.json*
+  - Rakefile
+  - README
+  - tmp
+  - vendor
+  - markdown_generator
+  - talkmap
+  - talkmap.ipynb
+  - talkmap.py
+  - talkmap_out.ipynb
+
+keep_files:
+  - .git
+  - .svn
+
+encoding                  : "utf-8"
+markdown_ext              : "markdown,mkdown,mkdn,mkd,md"
+
+markdown                  : kramdown
+highlighter               : rouge
+lsi                       : false
+excerpt_separator         : "\n\n"
+incremental               : false
+
+kramdown:
+  input                   : GFM
+  hard_wrap               : false
+  auto_ids                : true
+  footnote_nr             : 1
+  entity_output           : as_char
+  toc_levels              : 1..6
+  smart_quotes            : lsquo,rsquo,ldquo,rdquo
+  enable_coderay          : false
+
+collections:
+  publications:
+    output                : true
+    permalink             : /publication/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
