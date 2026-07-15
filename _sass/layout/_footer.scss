@@ -14,9 +14,11 @@
   width: 100%;
   clear: both;
 
+  // The footer belongs after the document content; never pin it to the viewport.
   height: auto;
-  position: relative;
-  bottom: auto;
+  position: static !important;
+  inset: auto !important;
+  float: none;
 
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;

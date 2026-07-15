@@ -18,10 +18,13 @@
   }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
-    height: 100vh;
-    overflow-y: visible;
-    position: fixed;
-    padding-top: $masthead-height;
+    // Keep the profile in place without creating a second scroll area.
+    position: fixed !important;
+    top: calc(#{$masthead-height} + 2em);
+    height: calc(100vh - #{$masthead-height} - 2em);
+    overflow: hidden;
+    overscroll-behavior: none;
+    padding-top: 0;
   }
 
   @include breakpoint($large) {
@@ -192,14 +195,26 @@
   font-size: $type-size-5;
 }
 
-.sidebar .author__desktop {
+.sidebar .author__urls li.author__desktop {
   display: none;
   @media screen and (min-width: 1024px) {
-    display: block;
+    display: grid;
+    grid-template-columns: 1.5em minmax(0, 1fr);
+    column-gap: 0.35em;
+    align-items: start;
+    max-width: 100%;
     white-space: normal;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
+}
+
+.sidebar .author__urls li.author__desktop i {
+  margin: 0;
+}
+
+.sidebar .author__urls li.author__desktop span {
+  min-width: 0;
 }
 
 .author__pronouns {
