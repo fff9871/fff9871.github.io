@@ -155,37 +155,6 @@ $(document).ready(function () {
   // Enable the theme toggle
   $('#theme-toggle').on('click', toggleTheme);
 
-  // Lift the desktop profile just before it would overlap the page footer.
-  var keepSidebarClearOfFooter = function () {
-    var sidebar = document.querySelector('.sidebar');
-    var footer = document.querySelector('.page__footer');
-
-    if (!sidebar || !footer) return;
-
-    sidebar.style.setProperty('--sidebar-footer-offset', '0px');
-    if (window.innerWidth < 1024) return;
-
-    var clearance = 16;
-    var overlap = sidebar.getBoundingClientRect().bottom + clearance - footer.getBoundingClientRect().top;
-    if (overlap > 0) {
-      sidebar.style.setProperty('--sidebar-footer-offset', (-overlap) + 'px');
-    }
-  };
-
-  var sidebarFooterAnimationFrame;
-  var requestSidebarFooterCheck = function () {
-    if (sidebarFooterAnimationFrame) return;
-
-    sidebarFooterAnimationFrame = window.requestAnimationFrame(function () {
-      sidebarFooterAnimationFrame = null;
-      keepSidebarClearOfFooter();
-    });
-  };
-
-  window.addEventListener('scroll', requestSidebarFooterCheck, { passive: true });
-  window.addEventListener('resize', requestSidebarFooterCheck);
-  keepSidebarClearOfFooter();
-
   // Follow menu drop down
   $(".author__urls-wrapper button").on("click", function () {
     $(".author__urls").fadeToggle("fast", function () { });
