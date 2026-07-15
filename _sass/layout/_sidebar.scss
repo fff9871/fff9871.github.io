@@ -18,12 +18,11 @@
   }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
-    // Keep the profile in place without creating a second scroll area.
-    position: fixed !important;
+    // Stay visible while the article scrolls, then stop before the footer.
+    position: sticky !important;
     top: calc(#{$masthead-height} + 2em);
-    height: calc(100vh - #{$masthead-height} - 2em);
-    overflow: hidden;
-    overscroll-behavior: none;
+    height: auto;
+    overflow: visible;
     padding-top: 0;
   }
 
