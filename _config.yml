@@ -59,7 +59,9 @@ social:
     - "https://github.com/fff9871"
 
 analytics:
-  provider               : "false"
+  provider               : "google-analytics-4"
+  google:
+    tracking_id          : "G-JXN019D0V4"
 
 include:
   - .htaccess
